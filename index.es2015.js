@@ -19,11 +19,11 @@ class NgComponent {
         for (let i = 0; i < changeKeys.length; ++i) {
             const key = changeKeys[i];
             try {
-                oldProps[key] = oldProps[key]['previousValue'];
+                oldProps[key] = changes[key]['previousValue'];
             }
             catch (e) { }
             try {
-                newProps[key] = newProps[key]['currentValue'];
+                newProps[key] = changes[key]['currentValue'];
             }
             catch (e) { }
             didPropsChange = didPropsChange || (newProps[key] !== oldProps[key]);
